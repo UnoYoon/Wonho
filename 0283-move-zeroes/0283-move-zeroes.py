@@ -5,6 +5,11 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        count = nums.count(0)
-        nums[:] = [x for x in nums if x != 0]
-        nums.extend([0] * count)
+        insert_pos = 0
+        for num in nums:
+            if nums != 0:
+                nums[insert_pos] = num
+                insert_pos += 1
+
+        for i in range(insert_pos, len(nums)):
+            nums[i] = 0
